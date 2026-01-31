@@ -13,8 +13,8 @@ ARG TAG="v0.1.0"
 ARG FILE="mmdr-x86_64-unknown-linux-gnu.tar.gz"
 ARG DOWNLOAD_URL="https://github.com/${OWNER}/${REPO}/releases/download/${TAG}/${FILE}"
 
-RUN curl -LO ${DOWNLOAD_URL}
-RUN tar -xz -f ${FILE}
-RUN chown root:root mmdr
-RUN mv mmdr /usr/bin/
-RUN rm ${FILE}
+RUN curl -LO ${DOWNLOAD_URL} &&\
+	tar -xz -f ${FILE} &&\
+	chown root:root mmdr &&\
+	mv mmdr /usr/bin/ &&\
+	rm ${FILE}
