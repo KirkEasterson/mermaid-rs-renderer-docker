@@ -1,11 +1,11 @@
-name: Publish
+name: Publish release
 
 on:
   release:
     types: [published]
 
 jobs:
-  publish:
+  publish-release:
     runs-on: ubuntu-latest
     permissions:
       packages: write
