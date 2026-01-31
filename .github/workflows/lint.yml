@@ -1,0 +1,19 @@
+name: CI
+
+on: [push]
+
+jobs:
+  lint:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - name: Lint
+        uses: hadolint/hadolint-action@v3.3.0
+        with:
+          dockerfile: Dockerfile
+
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Build
+        run: docker build -t $IMAGE_NAME:latest .
