@@ -1,6 +1,11 @@
 FROM alpine:3.23.3
 
-RUN apk add --no-cache curl jq tar libgcc gcompat
+RUN apk add --no-cache \
+	curl=8.17.0-r1 \
+	jq=1.8.1-r0 \
+	tar=1.35-r4 \
+	libgcc=15.2.0-r2 \
+	gcompat=1.1.0-r4
 
 ARG OWNER="1jehuang"
 ARG REPO="mermaid-rs-renderer"
